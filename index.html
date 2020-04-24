@@ -7,9 +7,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" type="image/png" href="favicon.ico" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="preconnect" href="https://twitch.tv">
+		<link rel="preconnect" href="https://go.twitch.tv">
+		<link rel="dns-prefetch" href="https://twitch.tv">
+		<link rel="dns-prefetch" href="https://go.twitch.tv">
+		<link rel="preconnect" href="https://youtube.com">
+		<link rel="dns-prefetch" href="https://youtube.com">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-X1Z09C6S1T"></script>
-		<script>
+		<script type="text/javascript">
 			window.dataLayer = window.dataLayer || [];
 			function gtag() { dataLayer.push(arguments); }
 			gtag('js', new Date());
@@ -149,16 +155,22 @@
 			<script src="assets/js/main.js"></script>
 			<script src="https://embed.twitch.tv/embed/v1.js" async onLoad="loadEmbed()" type="text/javascript"></script>
 			<script type="text/javascript" async>
-				document.addEventListener('touchstart', onTouchStart, { passive: true });
 				function loadEmbed(){
-					new Twitch.Embed("twitch-embed", {
+					var embed = new Twitch.Embed("twitch-embed", {
 						width: '100%',
 						height: '600px',
 						layout: 'video-with-chat',
 						channel: "thenoriega",
+						autoplay: false,
 						theme: "dark",
+						parent: ["thenoriega.tv", "noriega3.github.io"]
+					});
+					embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+						var player = embed.getPlayer();
+						player.play();
 					});
 				};
+
 			</script>
 
 	</body>
