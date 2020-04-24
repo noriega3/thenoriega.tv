@@ -1,0 +1,9 @@
+# Group 1
+User-agent: *
+Disallow: /nogooglebot/
+Disallow: .gitignore
+Disallow: /images/
+Disallow: /assets/
+
+User-agent: Googlebot-Image
+Disallow: /
