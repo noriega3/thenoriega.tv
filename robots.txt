@@ -1,7 +1,7 @@
 # Group 1
 User-agent: *
 Disallow: /nogooglebot/
-Disallow: .gitignore
+Disallow: /.gitignore
 Disallow: /images/
 Disallow: /assets/
 
